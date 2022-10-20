@@ -1,0 +1,77 @@
+body{
+  width: 100%;
+  background-color: #f08080;
+  font-family: 'Montserrat', sans-serif;
+}
+
+main{
+  display: flex;
+  align-items: center;
+  flex:flexbox;
+  padding: 15% 2% 15% 2%;
+  margin: 1.5%;
+  font-family: 'Montserrat', sans-serif;
+
+}
+
+figure{
+
+}
+
+.backgroundImage{
+  background-color:#f08080;
+  position: absolute;
+  z-index: -1;
+}
+
+.firstGrid{
+  width: 35%;
+  border: 1px white solid;
+  padding: 2.5%;
+  margin: 1% 5%;
+}
+
+article{
+  color: #FFFFFF;
+}
+
+article>section>h2{
+  font-weight: bold;
+  font-size: 3rem;
+  margin: 0 0 1.5rem 0;
+}
+
+article>section>p{
+  font-weight: 500;
+  line-height: 150%;
+  opacity: 90%;
+}
+
+.secondGrid{
+  width: 55%;
+  border: 1px white solid;
+  padding: 2%;
+  margin: 1% 5%;
+}
+
+aside>section>h2{
+  background-color: #613385;
+  border-radius: 5%;
+  padding: 1rem;
+  margin-bottom: 4%;
+}
+
+.captureLead{
+  display: flex;
+  flex-flow: column;
+  background-color: #F2F2F2;
+  border-radius: 2.5%;
+  margin: 2% 0;
+}
+
+
+footer{
+  color: forestgreen;
+  text-align: center;
+  font: 700 1.5em "Montserrat";
+}
