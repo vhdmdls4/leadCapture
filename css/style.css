@@ -7,14 +7,15 @@
   --branco-neve: #ffffff;
   --branco-seco: #f2f2f2;
   --verde-agua: #13d89a;
-  --background-fig: url('../img/bg-intro-desktop.png')
+  --vermelho: #d50000;
+  --vermelho-claro: #d5000024;
+  --background-fig: url('../img/bg-intro-desktop.png');
+  --exclamation-mark: url('../img/exclamation_mark.svg');
 }
 
 body{
   width: 100%;
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
   background-image: var(--background-fig);
   background-color: var(--salmao);
 }
@@ -30,7 +31,7 @@ main{
   font-family: 'Montserrat', sans-serif;
 }
 
-.firstGrid{
+.firstContainer{
   width: 50%;
   padding: 2.5%;
   margin: 1% 2.5%;
@@ -44,7 +45,7 @@ article{
 
 article>section>h2{
   font-weight: bold;
-  font-size: 2.75rem;
+  font-size: 2.5rem;
   margin-bottom: 4%;
 }
 
@@ -54,7 +55,7 @@ article>section>p{
   opacity: 90%;
 }
 
-.secondGrid{
+.secondContainer{
   width: 50%;
   padding: 2% 5% 2% 0;
   margin: 1% 2.5%;
@@ -65,9 +66,9 @@ aside>section>h2{
   background-color: #613385;
   border-radius: 7.5px;
   padding: 1.25rem 0;
-  margin-bottom: 4%;
+  margin-bottom: 6%;
   text-align: center;
-  box-shadow: 0 4px 0px 4px rgba(9, 9, 9, 0.195);
+  box-shadow: 0 8px 0px 0px rgba(9, 9, 9, 0.125);
 }
 
 aside>section>h2>b{
@@ -79,30 +80,46 @@ aside>section>h2>b{
   flex-flow: column;
   background-color: var(--branco-neve);
   border-radius: 7px;
-  padding: 7% 7% 10% 7%;
+  padding: 7% 7% 7% 7%;
 }
 
 .getInfo>input{
-  padding: 3.5% 0;
+  padding: 4.5% 0;
   border: 1px rgba(128, 128, 128, 0.474) solid;
   border-radius: 4px;
-  margin-bottom: 4.5%;
+  margin-bottom: .5%;
+  padding-inline-start: 5%;
+}
+
+.getInfo>input::placeholder{
+  font-weight: 600;
+}
+
+.getInfo>input:focus::placeholder{
+  opacity: 0;
 }
 
 .getInfo>input:last-child{
   margin-bottom: 0;
 }
 
-.getInfo>input::placeholder{
-  text-align: left;
-  font-weight: 700;
-  text-indent: 3.5%;
+.invalidAlert{
+  font-size: .7rem;
+  text-align: end;
+  color: var(--vermelho);
+  box-sizing: content-box;
+  padding: 0.25% 0 4% 0;
+  visibility: hidden;
 }
 
-
-.sendInfo{
-  margin-top: .25rem;
-}
+.invalidInput{
+  background-image: var(--exclamation-mark);
+  background-size: 1.5rem;
+  color: red;
+  background-repeat: no-repeat;
+  background-position: right 3.5% bottom 50%;
+  border: 1.5px var(--vermelho) solid;
+} 
 
 .button{
   border-top: 1px solid #94d4bf;
@@ -110,33 +127,39 @@ aside>section>h2>b{
   -webkit-border-radius: 8px;
   -moz-border-radius: 8px;
   border-radius: 8px;
-  -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
-  -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
-  box-shadow: rgba(0,0,0,1) 0 1px 0;
-  text-shadow: rgba(0,0,0,.4) 0 1px 0;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.336) 0 5px 0;
+  -moz-box-shadow: #0fa274b8 0 5px 0;
+  box-shadow: #0fa274b8 0 5px 0;
+  text-shadow: rgba(0, 0, 0, 0.226) 0 .75px 0;
   color: var(--branco-seco);
   text-decoration: none;
   vertical-align: middle;
-  padding: 1.1rem 0.5rem;
+  padding: 1.35rem 0.5rem;
   text-align: center;
   text-transform: uppercase;
   font-weight: 700;
+  letter-spacing: 1px;
 }
 
 .button:hover {
   border-top-color: #0c805b;
-  background: #0c805b;
-  color: #ccc;
+  background: #3adeaad0;
+  color: rgb(238, 238, 238);
+  cursor: pointer;
 }
 
 .button:active {
-  border-top-color: #7a13d4;
-  background: #7a13d4;
+  border-top-color: var(--verde-agua);
+  background: var(--verde-agua);
+  opacity: 80%;
 }
 
 #terms{
-  margin-top: 4%;
-  font-size: .5rem;
+  margin: 4% 10% 1% 10%;
+  color: rgb(202, 202, 202);
+  font-size: .7rem;
+  font-weight: 600;
+  line-height: 200%;
   text-align: center;
 }
 
@@ -153,4 +176,45 @@ footer{
   color: forestgreen;
   text-align: center;
   font: 700 .8em "Montserrat";
+}
+
+@media screen and (min-width: 300px) and (max-width: 1023px) {
+  main{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .firstContainer{
+    width: 100%;
+    padding: 3.5% 2.5%;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+
+  article>section>h2{
+    padding: 10% 5% 2.5% 5%;
+    font-size: 1.75em;
+  }
+
+  article>section>p{
+    width: 90%;
+    margin: 0 5%;
+    font-size: 1.1rem;
+  }
+
+  .secondContainer{
+    width: 100%;
+    padding: 5%;
+    margin: auto;
+  }
+
+  aside>section>h2{
+    padding: 5% 15.5%;
+    font-size: 1.15rem;
+    line-height: 2rem;
+  }
+
 }
