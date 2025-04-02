@@ -1,6 +1,7 @@
 # Frontend Mentor - Intro component with sign up form
 
-![Design preview for the Intro component with sign up form coding challenge](./design/desktop-preview.jpg)
+Access the project here:
+https://vhdmdls4.github.io/leadCapture/
 
 ## Welcome! 👋
 
